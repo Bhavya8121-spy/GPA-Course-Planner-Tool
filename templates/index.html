@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dallas College Transfer Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Dallas College → UT Austin</h1>
+        <p>Computer Science Transfer Engine</p>
+    </header>
+
+    <div class="container">
+        <div class="sidebar card">
+            <h2>Current GPA: <span id="gpa-val">0.00</span></h2>
+            <div class="form">
+                <input type="text" id="c-name" placeholder="Course (e.g. COSC 1436)">
+                <input type="number" id="c-hours" placeholder="Credits" min="1">
+                <select id="c-grade">
+                    <option value="4.0">A</option>
+                    <option value="3.0">B</option>
+                    <option value="2.0">C</option>
+                </select>
+                <button onclick="addCourse()">Add Course</button>
+            </div>
+        </div>
+
+        <div class="main card">
+            <h3>Planned Coursework</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>DC Course</th>
+                        <th>UT Equivalent</th>
+                        <th>Credits</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="list-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
